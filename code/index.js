@@ -1,5 +1,6 @@
 
 exports.handler = (event, context, callback) => {
-  console.log('Hello, logs!');
-  callback(null, 'great success');
+  const key = event.Records[0].s3.object.key;
+  console.log(`${key} was removed`)
+  callback(null, `${key} was removed`)
 }
